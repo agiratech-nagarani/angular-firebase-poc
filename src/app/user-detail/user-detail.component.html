@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <span>User Detail</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+      <form [formGroup]="userDetail">
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input  matInput  formControlName ="name" placeholder="Name"  name="fname"  required>
+        </mat-form-field>
+        <!-- <mat-form-field class="full-width"> -->
+          <mat-label>Upload Image</mat-label>
+          <button type="button" mat-button (click)="imgFileInput.click()">Add a photo</button>
+          <input hidden type="file"  #imgFileInput (change)="uploadFile($event)" />
+          <!-- <input  matInput type="file" formControlName ="imageURL" placeholder="First name"  name="fname"  (change)="uploadFile($event)" required> -->
+        <!-- </mat-form-field> -->
+      </form>
+    </mat-card-content>   
+    <mat-card-actions>
+      <button mat-raised-button (click)="createUserDetail(userDetail)" color="primary">REGISTER</button>
+    </mat-card-actions>
+</mat-card>
+
